@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace CustomResourceLambda
+namespace Comformation.CustomResources
 {
     public class CloudFormationResponse
     {
@@ -51,5 +51,16 @@ namespace CustomResourceLambda
 
             return responseBody;
         }
+    }
+
+    public class CloudFormationResponse<T>
+    {
+        public string Status { get; set; }
+        public string Reason { get; set; }
+        public string PhysicalResourceId { get; set; }
+        public string StackId { get; set; }
+        public string RequestId { get; set; }
+        public string LogicalResourceId { get; set; }
+        public T Data { get; set; }
     }
 }

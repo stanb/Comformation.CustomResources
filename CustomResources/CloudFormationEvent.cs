@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using System.Text;
 
-namespace CustomResourceLambda
+namespace Comformation.CustomResources
 {
     public class CloudFormationEvent<T>
     {

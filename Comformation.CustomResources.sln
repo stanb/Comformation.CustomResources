@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comformation.CustomResources", "CustomResources\Comformation.CustomResources.csproj", "{5417419A-F9AB-4A87-BEA2-4D487D176A04}"
 EndProject
@@ -13,6 +13,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comformation.CustomResources.RunLambda", "RunLambda\Comformation.CustomResources.RunLambda.csproj", "{F7CDB0A9-3C52-43A9-9B4E-7FE4BDFDF973}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comformation.CodeBuildFunction", "CodeBuildFunction\Comformation.CodeBuildFunction.csproj", "{D0997E23-E787-4903-8E86-16DA1F4A3DD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform", "RunTerraform\RunTerraform.csproj", "{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.App", "RunTerraform.App\RunTerraform.App.csproj", "{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.RunCodeBuildLambda", "..\RunTerraform.RunCodeBuildLambda\RunTerraform.RunCodeBuildLambda.csproj", "{CA78B787-BE66-4818-93FF-3FEF6547EAD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.RunCodeBuildLambda.Tests", "..\RunTerraform.RunCodeBuildLambda.Tests\RunTerraform.RunCodeBuildLambda.Tests.csproj", "{B2B12A43-56DA-4630-A8F0-E8815B12F450}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +44,30 @@ Global
 		{F7CDB0A9-3C52-43A9-9B4E-7FE4BDFDF973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7CDB0A9-3C52-43A9-9B4E-7FE4BDFDF973}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7CDB0A9-3C52-43A9-9B4E-7FE4BDFDF973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0997E23-E787-4903-8E86-16DA1F4A3DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0997E23-E787-4903-8E86-16DA1F4A3DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0997E23-E787-4903-8E86-16DA1F4A3DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0997E23-E787-4903-8E86-16DA1F4A3DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

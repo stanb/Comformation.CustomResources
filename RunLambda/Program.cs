@@ -1,10 +1,9 @@
 ﻿using Amazon;
 using Amazon.CloudFormation;
-using Comformation;
+using RunTerraform;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LambdaFunction = Comformation.Lambda.Function;
 
 namespace Comformation.CustomResources.RunLambda
 {
@@ -15,43 +14,66 @@ namespace Comformation.CustomResources.RunLambda
             var region = RegionEndpoint.EUWest1;
             var sandboxId = Guid.NewGuid().ToString();
 
-            var runService1 = new StartCodeBuildResource
+            var backendBucket = new S3.Bucket.BucketResource
+            {
+                LogicalId = "BackendBucket",
+                Properties =
+                {
+                    BucketName = $"stan-test-{sandboxId}",
+                }
+            };
+
+            var runService1 = new CodeBuildRunTerraformResource
             {
                 LogicalId = "RunService1",
-                Properties = new StartCodeBuildProperties
+                DependsOn = backendBucket.LogicalId,
+                Properties = new StartCodeBuildProperties<RunTerraformRequest>
                 {
                     ServiceToken = "arn:aws:lambda:eu-west-1:394351388697:function:CustomResourceSampleLambda",
                     ProjectArn = "<service1 codebuild project arn>",
-                    Environment = new Dictionary<string, Union<string, Comformation.IntrinsicFunctions.IntrinsicFunction>>
+                    Environment = new RunTerraformRequest
                     {
-                        { "TF_VERSION", "0.12.0" },
-                        { "TF_SERVICE", "Service1" },
+                        Version = "0.12.2",
+                        Backend = new BackendS3
+                        {
+                            Bucket = "stan-test-{sandboxId}",
+                            Key = "Service1",
+                            Region = region.SystemName
+                        },
+                        Vars = new Dictionary<string, string>
+                        {
+                            { "sandbox_id", sandboxId },
+                            { "owner", "Stan" },
+                            { "key_name", "" }
+                        },
+                        VarFile = null,
+                        FromModule = "https://github.com/stanb/terraform-samples/tree/master/aws/single-instance"
                     }
                 }
             };
 
-            var runService2 = new StartCodeBuildResource
-            {
-                LogicalId = "RunService2",
-                DependsOn = runService1.LogicalId,
-                Properties = new StartCodeBuildProperties
-                {
-                    ServiceToken = "arn:aws:lambda:eu-west-1:394351388697:function:CustomResourceSampleLambda",
-                    ProjectArn = "<service2 codebuild project arn>",
-                    Environment = new Dictionary<string, Union<string, Comformation.IntrinsicFunctions.IntrinsicFunction>>
-                    {
-                        { "TF_VERSION", "0.12.0" },
-                        { "TF_SERVICE", "Service2" },
-                    }
-                }
-            };
+            //var runService2 = new StartCodeBuildResource
+            //{
+            //    LogicalId = "RunService2",
+            //    DependsOn = runService1.LogicalId,
+            //    Properties = new StartCodeBuildProperties<RunTerraform>
+            //    {
+            //        ServiceToken = "arn:aws:lambda:eu-west-1:394351388697:function:CustomResourceSampleLambda",
+            //        ProjectArn = "<service2 codebuild project arn>",
+            //        //Environment = new Dictionary<string, Union<string, Comformation.IntrinsicFunctions.IntrinsicFunction>>
+            //        //{
+            //        //    { "TF_VERSION", "0.12.0" },
+            //        //    { "TF_SERVICE", "Service2" },
+            //        //}
+            //    }
+            //};
 
             var template = new Template
             {
                 Resources = new Resources
                 {
                     runService1,
-                    runService2
+                    //runService2
                 }
             };
 

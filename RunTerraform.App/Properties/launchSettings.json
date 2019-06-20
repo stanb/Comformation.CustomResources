@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RunTerraform.App": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

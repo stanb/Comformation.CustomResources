@@ -1,12 +1,8 @@
-﻿using Comformation;
-using Comformation.IntrinsicFunctions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Comformation.IntrinsicFunctions;
 
-namespace Comformation.CustomResources.RunLambda
+namespace Comformation.CustomResources
 {
-    public class StartCodeBuildProperties : ICustomResourceProperties
+    public class StartCodeBuildProperties<TEnv> : ICustomResourceProperties
     {
         /// <summary>
         /// Service token (ARN) of lambda function that will start code build project
@@ -21,10 +17,6 @@ namespace Comformation.CustomResources.RunLambda
         /// <summary>
         /// Environment variables that will be passed to CodeBuild Project
         /// </summary>
-        public Dictionary<string, Union<string, IntrinsicFunction>> Environment { get; set; }
-    }
-
-    public class StartCodeBuildResource : CustomResourceBase<StartCodeBuildProperties>
-    {
+        public TEnv Environment { get; set; }
     }
 }
