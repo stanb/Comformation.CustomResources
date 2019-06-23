@@ -34,7 +34,7 @@ namespace Comformation.CustomResources.RunLambda
                     Environment = new RunTerraformRequest
                     {
                         Version = "0.12.2",
-                        Backend = new BackendS3
+                        Backend = new Backend
                         {
                             Bucket = "stan-test-{sandboxId}",
                             Key = "Service1",

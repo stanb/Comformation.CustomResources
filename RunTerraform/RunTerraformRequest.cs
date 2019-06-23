@@ -33,16 +33,11 @@ namespace RunTerraform
         /// <summary>
         /// Terraform backend configuration
         /// </summary>
-        public IBackend Backend { get; set; }
+        public Backend Backend { get; set; }
 
     }
 
-    public interface IBackend
-    {
-        string Type { get; }
-    }
-
-    public class BackendS3 : IBackend
+    public class Backend
     {
         public string Type => "s3";
         public string Bucket { get; set; }

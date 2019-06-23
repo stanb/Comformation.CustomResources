@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comformation.CustomResources", "CustomResources\Comformation.CustomResources.csproj", "{5417419A-F9AB-4A87-BEA2-4D487D176A04}"
 EndProject
@@ -18,13 +18,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comformation.CodeBuildFunct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform", "RunTerraform\RunTerraform.csproj", "{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.App", "RunTerraform.App\RunTerraform.App.csproj", "{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.StartCodeBuildLambda", "RunTerraform.StartCodeBuildLambda\RunTerraform.StartCodeBuildLambda.csproj", "{B0087834-4E46-42FE-9B97-107F8F2C76D7}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.StartCodeBuildLambda.Tests", "RunTerraform.StartCodeBuildLambda.Tests\RunTerraform.StartCodeBuildLambda.Tests.csproj", "{A404D6A6-95F8-44E2-94B4-8C1DDC200682}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.RunCodeBuildLambda", "..\RunTerraform.RunCodeBuildLambda\RunTerraform.RunCodeBuildLambda.csproj", "{CA78B787-BE66-4818-93FF-3FEF6547EAD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunTerraform.App", "RunTerraform.App\RunTerraform.App.csproj", "{51E6E2DB-E5F6-4EC8-86F6-9D943A8B3633}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTerraform.RunCodeBuildLambda.Tests", "..\RunTerraform.RunCodeBuildLambda.Tests\RunTerraform.RunCodeBuildLambda.Tests.csproj", "{B2B12A43-56DA-4630-A8F0-E8815B12F450}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8B3D7620-E581-4D98-BB8B-D87150A1CDE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,22 +52,22 @@ Global
 		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B1846E2-388A-44B7-8C15-86E46C6DD0EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C8BA0C9-86EB-4BEE-A2C8-91050586853F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D33BE02-23E0-46EA-B00F-9A3D6B047A03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA78B787-BE66-4818-93FF-3FEF6547EAD4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2B12A43-56DA-4630-A8F0-E8815B12F450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0087834-4E46-42FE-9B97-107F8F2C76D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0087834-4E46-42FE-9B97-107F8F2C76D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0087834-4E46-42FE-9B97-107F8F2C76D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0087834-4E46-42FE-9B97-107F8F2C76D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A404D6A6-95F8-44E2-94B4-8C1DDC200682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A404D6A6-95F8-44E2-94B4-8C1DDC200682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A404D6A6-95F8-44E2-94B4-8C1DDC200682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A404D6A6-95F8-44E2-94B4-8C1DDC200682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E6E2DB-E5F6-4EC8-86F6-9D943A8B3633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E6E2DB-E5F6-4EC8-86F6-9D943A8B3633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E6E2DB-E5F6-4EC8-86F6-9D943A8B3633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E6E2DB-E5F6-4EC8-86F6-9D943A8B3633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B3D7620-E581-4D98-BB8B-D87150A1CDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B3D7620-E581-4D98-BB8B-D87150A1CDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B3D7620-E581-4D98-BB8B-D87150A1CDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B3D7620-E581-4D98-BB8B-D87150A1CDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
